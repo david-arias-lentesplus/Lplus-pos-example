@@ -1,0 +1,91 @@
+
+<button [print]="['posToPrint', config]">Imprimir POS with HTML</button>
+
+<div class="posWrapper" id="posToPrint">
+    <div class="posBox" *ngFor="let itm of info">
+
+        <div class="mainBarCode">
+            <ngx-barcode [bc-width]="1.5" [bc-height]="50" [bc-font-size]="14" [bc-value]="itm.code" [bc-display-value]="false"></ngx-barcode>
+        </div>
+        <div class="orderNum">
+            <div class="lbl">Pedido #</div>
+            <div><b>{{itm.code}}</b></div>
+        </div>
+        
+        <div class="userInfo">
+            <div class="item">
+                <div class="label">Nombre:</div>
+                <div class="value"><b>{{itm.userInfo.name}}</b></div>
+            </div>
+            <div class="item">
+                <div class="label">Dirección:</div>
+                <div class="value"><b>{{itm.userInfo.dir}}</b></div>
+            </div>
+            <div class="item">
+                <div class="label">Ciudad:</div>
+                <div class="value"><b>{{itm.userInfo.city}}</b></div>
+            </div>
+        </div>
+        <div class="prodInfo">
+            <div class="ttl">Productos</div>
+            <div class="prod" *ngFor="let prod of itm.prods">
+                <div class="name"><b>{{prod.name}}</b></div>
+                <div class="midInfo">
+                    <div class="sku">
+                        <div class="lbl">SKU</div>
+                        <div class="val"><b>{{prod.sku}}</b></div>
+                    </div>
+                    <div class="order">
+                        <div class="lbl">Orden #</div>
+                        <div class="val"><b>{{prod.order}}</b></div>
+                    </div>
+                </div>
+                <div class="dioptry">
+                    <span *ngIf="prod.use_type_id == 1">
+                        <span>Poder (Esfera): <b>{{ prod.sku_full | diopBySkufull:'Esfera' }}</b></span><br>
+                    </span>
+                    <span *ngIf="prod.use_type_id == 2">
+                        <span>Poder (Esfera): <b>{{ prod.sku_full | diopBySkufull:'Esfera' }}</b></span><br>
+                        <span>Cilindro (Cyl): <b>{{ prod.sku_full | diopBySkufull:'Cyl' }}</b></span><br>
+                        <span>Eje (Axis): <b>{{ prod.sku_full | diopBySkufull:'Axis' }}</b></span><br>
+                    </span>
+                    <span *ngIf="prod.use_type_id == 3">
+                        <span>Poder (Esfera): <b>{{ prod.sku_full | diopBySkufull:'Esfera' }}</b></span><br>
+                        <span>Adición (Add): <b>{{ prod.sku_full | diopBySkufull:'Cyl' }}</b></span><br>
+                    </span>
+                    <span *ngIf="prod.use_type_id == 4">
+                        <span>Poder (Esfera): <b>{{ prod.sku_full | diopBySkufull:'Esfera' }}</b></span><br>
+                        <span>Color: <b>{{ prod.sku_full | diopBySkufull:'Cyl' }}</b></span><br>
+                    </span>
+                    <span *ngIf="prod.use_type_id == 6">
+                        <span><b>Solución</b></span><br>
+                    </span>
+                    <span *ngIf="prod.use_type_id == 10">
+                        <span><b>Lente oftálmico</b></span><br>
+                    </span>
+                    <span *ngIf="prod.use_type_id == 7">
+                        <span><b>Marco</b></span><br>
+                    </span>
+                    <span *ngIf="prod.use_type_id === null || prod.use_type_id === 'null' ">
+                        <span><b>--</b></span><br>
+                    </span>
+                </div>
+                <!-- <div class="proBarCode">
+                    <ngx-barcode [bc-width]="1" [bc-height]="50" [bc-font-size]="14" [bc-value]="prod.ean" [bc-display-value]="false"></ngx-barcode>
+                </div> -->
+                <hr>
+            </div>
+        </div>
+
+        <div class="totalPrdos">
+            <div class="lbl">Total productos:</div>
+            <div><b>{{itm.totalProds}}</b></div>
+        </div>
+
+        <hr class="breakspace">
+        <hr>
+
+        <div class="pageBreak" style="display:block; page-break-after: always;"></div>
+
+    </div>
+</div>

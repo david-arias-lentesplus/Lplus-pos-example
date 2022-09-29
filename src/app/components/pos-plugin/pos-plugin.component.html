@@ -1,0 +1,11 @@
+<p>pos-plugin works!</p>
+
+<strong>Status: {{status}}</strong>
+
+<div>
+    <button (click)="requestUsb()">Connect to USB</button>
+</div>
+
+<div>
+    <button (click)="print()" [disabled]="status === false"> Print with plugin!</button>
+</div>

@@ -1,0 +1,98 @@
+
+
+.posWrapper {
+    width: 7cm;
+    box-sizing: border-box;
+}
+
+.posWrapper .posBox {
+    width: 7cm;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: thin solid black; */
+    padding: 10px;
+    box-sizing: border-box;
+}
+.posWrapper .posBox .orderNum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    padding: 8px 10px;
+    margin: 5px 0 15px 0;
+}
+.posWrapper .posBox .orderNum .lbl {
+    font-size: 14px;
+}
+.posWrapper .posBox .orderNum b {
+    font-size: 18px;
+}
+
+.posWrapper .posBox .userInfo {
+    margin: 15px 0;
+}
+.posWrapper .posBox .userInfo .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 10px 0;
+    align-items: center;
+}
+.posWrapper .posBox .userInfo .item .label {
+    font-size: 14px;
+    text-align: left;
+}
+.posWrapper .posBox .userInfo .item .value {
+    font-size: 14px;
+    text-align: right;
+}
+            
+.posWrapper .posBox .prodInfo .ttl {
+    background: black;
+    color: white;
+    padding: 8px 0;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.posWrapper .posBox .prodInfo .prod {
+    font-size: 14px;
+}
+.posWrapper .posBox .prodInfo .prod .name {
+    text-align: left;
+    margin: 0 0 5px 0;
+}
+
+.posWrapper .posBox .prodInfo .prod .midInfo {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.posWrapper .posBox .prodInfo .prod .midInfo .lbl {
+    margin: 0 0 5px 0;
+}
+
+.posWrapper .posBox .totalPrdos {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px;
+            background: black;
+            color: white;
+            padding: 8px 10px;
+            margin: 5px 0 15px 0;
+}
+.posWrapper .posBox .totalPrdos .lbl {
+    font-size: 14px;
+}
+
+.posWrapper .posBox .totalPrdos b {
+    font-size: 18px;
+}
+.breakspace {
+    margin: 20px 0 100px 0;
+}
