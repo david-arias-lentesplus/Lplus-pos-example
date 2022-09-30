@@ -15,6 +15,10 @@ export class PosNodePluginComponent implements OnInit {
   }
 
   async ngOnInit() {
+
+
+
   }
+
 
 }
